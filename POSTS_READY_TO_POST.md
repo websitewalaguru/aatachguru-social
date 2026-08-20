@@ -1,4 +1,4 @@
-# 🚀 Aatach Satara (@aatachsatara) – Social Media Master Content Sheet
+# 🚀 Aatach Satara (@aatachsatara) – Social Media Master Masterplay & Toolkit
 
 * **Grand Launch Date:** Friday, 4 September 2026 (Krishna Janmashtami & Dahi Handi Utsav)
 * **Coverage:** All 11 Talukas of Satara District (सातारा, कराड, वाई, महाबळेश्वर, जावळी, फलटण, कोरेगाव, खटाव, माण, पाटण, खंडाळा)
@@ -37,6 +37,13 @@
 #Wai #WaiSatara #DholyaGanpati #MenavaliGhat #KrishnaRiver #AatachSatara #SataraTourism #MaharashtraHeritage #IncredibleSatara #SataraDiaries #ExploreSatara
 ```
 
+### 🎬 Viral 30-Sec Reel Script:
+* **Audio:** Soft Shehnai flute transition into energetic traditional Dhol beat
+* **Hook (0-3s):** (Screen text: "तुम्हाला माहितीये का वाईला 'दक्षिण काशी' का म्हणतात?")
+* **Visuals (3-15s):** Fast drone/b-roll cuts of Menavali Ghat steps, Krishna river mist, Dholya Ganpati idol.
+* **Voiceover (15-25s):** "ऐतिहासिक घाट, २५० वर्षे जुनी मंदिरे आणि निसर्गाची अद्भूत किमया! वाईची संपूर्ण ट्रॅव्हल गाईड आणि जवळची हॉटेल्स आता उपलब्ध 'आताच सातारा' ॲपवर!"
+* **Call to Action (25-30s):** "बायोमधील लिंकवर क्लिक करा किंवा कमेंट करा 'WAI'!"
+
 ---
 
 ## 💦 Day 2 (Saturday, 22 Aug 2026): Weekend Monsoon Trip to Thoseghar & Chalkewadi
@@ -63,6 +70,13 @@
 ---
 #Thoseghar #ThosegharWaterfalls #Chalkewadi #SataraMonsoon #AatachSatara #SataraTreks #MaharashtraWaterfalls #Sahyadri_Clickers #SataraTourism #WeekendVibes
 ```
+
+### 🎬 Viral 30-Sec Reel Script:
+* **Audio:** Trending energetic monsoon travel beat
+* **Hook (0-3s):** (Screen text: "साताऱ्यात 1 दिवसाचा मान्सून प्लॅन कसा करायचा? Save this Reel!")
+* **Visuals (3-18s):** Sajjangad breakfast -> Thoseghar roaring waterfall waterfall spray -> Chalkewadi misty windmill walk.
+* **Voiceover (18-27s):** "सज्जनगड, ठोसेघर आणि चाळकेवाडी! पार्किंग कुठे करायची, कोणता रस्ता सोपा आहे... सर्व गाईड आता एकाच ठिकाणी 'आताच सातारा' वर!"
+* **Call to Action (27-30s):** "तुमच्या ट्रिप गँगला टॅग करा आणि बायो मधील लिंक सेव्ह करा!"
 
 ---
 
@@ -143,14 +157,58 @@
 
 ---
 
-# 🚀 PREVIOUS CAMPAIGN & LAUNCH POSTS (STILL ACTIVE)
+# 💬 WHATSAPP COMMUNITY BROADCAST TEMPLATES
 
-* **Teaser 4 Sept:** `posts/07_prelaunch_teaser_4sept.jpg`
-* **4 Launch Offers:** `posts/09_launch_offers_and_perks.jpg`
-* **11 Talukas Map:** `posts/08_all_11_talukas_map.jpg`
-* **Janmashtami Special:** `posts/10_janmashtami_dahihandi_launch.jpg`
-* **Official Launch Post:** `posts/01_grand_launch_feed.jpg`
-* **4 Superpowers:** `posts/02_app_features_showcase.jpg`
-* **Events Spotlight:** `posts/04_todays_events_spotlight.jpg`
-* **Food & Business:** `posts/05_satara_business_directory.jpg`
-* **Kaas Plateau:** `posts/06_kaas_flowers_festivals.jpg`
+### Template 1: For Satara College Students & Youth
+```
+🔥 *सातारकरांसाठी मोठी बातमी!* 🚀✨
+आपल्या सातारा जिल्ह्यासाठी एक खास नवीन डिजिटल ॲप येतंय — *"आताच सातारा"* (Aatach Satara)!
+
+आता साताऱ्यातील:
+👉 आजचे सर्व लाईव्ह इव्हेंट्स, स्पर्धा व उत्सव 🎪
+👉 प्रसिद्ध खाऊगल्ल्या आणि कॅफे ☕🍔
+👉 विकेंड ट्रिप प्लॅनर (कास, ठोसेघर, महाबळेश्वर) 🎒
+
+🗓️ *Grand Launch:* 4 सप्टेंबर 2026 (जन्माष्टमी)
+🎁 पहिल्या 500 युझर्सना 3 महिने मोफत VIP ऍक्सेस!
+
+📲 *आत्ताच Early Access मिळवा:*
+👉 https://aatachsatara-84bc9.web.app/
+
+हा मेसेज तुमच्या सर्व सातारकर मित्रांना व ग्रुप्सना नक्की फॉरवर्ड करा! 🚩
+```
+
+### Template 2: For Local Shopkeepers, Restaurants & Businesses
+```
+🏪 *साताऱ्यातील व्यावसायिक व दुकानदारांसाठी सुवर्णसंधी!* 💼📈
+
+आपल्या सातारा जिल्ह्यासाठी लाँच होत असलेल्या *"आताच सातारा"* डिजिटल डिरेक्टरीवर आपल्या व्यवसायाची नोंदणी करा!
+
+🎁 *Launch Offer:*
+✅ पहिल्या 50 सातारकर व्यवसायांना **100% मोफत प्रीमियम लिस्टिंग**!
+✅ दररोज हजारो स्थानिक ग्राहक व पर्यटकांपर्यंत पोहोचण्याची संधी.
+
+📲 *आपला व्यवसाय मोफत लिस्ट करण्यासाठी येथे भेट द्या:*
+👉 https://aatachsatara-84bc9.web.app/
+(किंवा आम्हाला थेट मेसेज करा)
+```
+
+---
+
+# 🤝 INFLUENCER & CREATOR DM OUTREACH TEMPLATES
+
+### Marathi Outreach DM (For Photography & Food Bloggers):
+```
+नमस्कार @[Creator_Name] जी! 🙏🚩
+आम्ही तुमची साताऱ्यावरील फोटोग्राफी आणि कंटेंन्ट नेहमी फॉलो करतो, खूपच अप्रतिम काम आहे! ❤️
+
+आम्ही येत्या ४ सप्टेंबर २०२६ (श्रीकृष्ण जन्माष्टमी) रोजी संपूर्ण सातारा जिल्ह्यासाठी "आताच सातारा" (Aatach Satara) हे डिजिटल प्लॅटफॉर्म लाँच करत आहोत — ज्यामध्ये साताऱ्यातील पर्यटन, स्थानिक संस्कृती, इव्हेंट्स आणि फूड एकाच ठिकाणी उपलब्ध होईल.
+
+आम्हाला तुम्हाला आमच्या या ॲपचा "VIP Creator Early Access" द्यायला नक्की आवडेल!
+तुम्ही एकदा ॲप पाहून तुमचा फीडबॅक देऊ शकता का? 
+
+📲 Web App Preview: https://aatachsatara-84bc9.web.app/
+
+साताऱ्याची संस्कृती जगासमोर आणण्यासाठी तुमच्या सहकार्याची अपेक्षा! 🤝✨
+- टीम आताच सातारा
+```
