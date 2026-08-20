@@ -21,6 +21,7 @@
       --accent: #2ed573;
       --wa-color: #25D366;
       --ig-color: #E1306C;
+      --fb-color: #1877F2;
       --text: #f1f2f6;
       --text-muted: #a4b0be;
     }
@@ -218,7 +219,8 @@
     }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,0.5); }
     .btn-wa { background: var(--wa-color); color: #000; font-weight: 800; }
-    .btn-ig { background: var(--ig-color); color: #fff; }
+    .btn-ig { background: var(--ig-color); color: #fff; font-weight: 800; }
+    .btn-fb { background: var(--fb-color); color: #fff; font-weight: 800; }
     .btn-dark {
       background: rgba(255,255,255,0.1);
       color: #fff;
@@ -337,7 +339,7 @@
       font-size: 0.83rem;
       line-height: 1.5;
       color: #ced6e0;
-      height: 160px;
+      height: 155px;
       overflow-y: auto;
       white-space: pre-wrap;
       font-family: inherit;
@@ -390,15 +392,39 @@
     }
     .chk-label input { cursor: pointer; accent-color: #2ed573; }
 
+    /* Direct Social Share Toolbar */
+    .social-share-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .btn-share {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.5rem 0.3rem;
+      border-radius: 0.5rem;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease;
+    }
+    .btn-share:hover { transform: translateY(-2px); }
+    .btn-share-wa { background: #25D366; color: #000; }
+    .btn-share-ig { background: #E1306C; color: #fff; }
+    .btn-share-fb { background: #1877F2; color: #fff; }
+
     .card-actions {
       margin-top: auto;
       display: flex;
       gap: 0.4rem;
-      flex-wrap: wrap;
     }
     .btn-copy {
       flex: 1;
-      min-width: 120px;
       background: var(--primary);
       color: #111;
       font-weight: 700;
@@ -415,17 +441,6 @@
     .btn-copy:hover { background: #ffe033; }
     .btn-copy-prompt { background: #2ed573; color: #000; }
     .btn-copy-reel { background: #e1306c; color: #fff; }
-    .btn-share-wa {
-      background: rgba(37, 211, 102, 0.15);
-      color: #25D366;
-      border: 1px solid rgba(37, 211, 102, 0.4);
-      padding: 0.55rem 0.75rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-    .btn-share-wa:hover { background: #25D366; color: #000; }
 
     .toast {
       position: fixed;
@@ -452,7 +467,7 @@
     <div class="lock-card">
       <img src="assets/logo_transparent.png" class="lock-logo" alt="Logo" />
       <h2 style="font-size: 1.5rem; color:#FFD700; margin-bottom: 0.3rem;">Aatach Satara</h2>
-      <p style="font-size: 0.9rem; color: #a4b0be;">Private Content & AI Prompt Hub</p>
+      <p style="font-size: 0.9rem; color: #a4b0be;">Private Content & Direct Share Hub</p>
       
       <input type="password" id="pinInput" class="pin-input" placeholder="Enter PIN (1234)" maxlength="6" autofocus onkeydown="if(event.key==='Enter') verifyPin()" />
       <div id="pinError" class="pin-error">❌ Incorrect PIN! Try again.</div>
@@ -481,7 +496,7 @@
     <div class="progress-card">
       <div class="progress-head">
         <span>🚀 20-Day Launch Campaign Progress</span>
-        <span id="progress-text">0 / 14 Published (0%)</span>
+        <span id="progress-text">0 / 21 Tasks Done (0%)</span>
       </div>
       <div class="progress-bar-bg">
         <div class="progress-fill" id="progress-fill"></div>
@@ -491,7 +506,7 @@
     <div class="links-bar">
       <a href="https://aatachsatara-84bc9.web.app/" target="_blank" class="btn btn-gold">🌐 Live Web App</a>
       <a href="https://www.instagram.com/aatachsatara" target="_blank" class="btn btn-ig">📸 Instagram</a>
-      <a href="https://www.facebook.com/share/1C9QSvUFCe/" target="_blank" class="btn btn-dark">👥 Facebook</a>
+      <a href="https://www.facebook.com/share/1C9QSvUFCe/" target="_blank" class="btn btn-fb">👥 Facebook</a>
       <a href="https://business.facebook.com/latest/composer" target="_blank" class="btn btn-dark">⚙️ Meta Scheduler</a>
       <button onclick="lockAgain()" class="btn btn-dark" style="color: #ff6b81;">🔒 Lock</button>
     </div>
@@ -516,6 +531,13 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day1_ig', this)" id="chk-day1_ig" /> IG</label>
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day1_fb', this)" id="chk-day1_fb" /> FB</label>
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day1_wa', this)" id="chk-day1_wa" /> WhatsApp</label>
+          </div>
+
+          <!-- Direct Share Buttons -->
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-11')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-11', 'posts/11_day1_wai_krishna_ghats.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-11')">📘 Facebook</button>
           </div>
 
           <div class="card-tabs">
@@ -546,8 +568,7 @@
 #Wai #WaiSatara #DholyaGanpati #MenavaliGhat #KrishnaRiver #AatachSatara #SataraTourism #MaharashtraHeritage #IncredibleSatara #SataraDiaries #ExploreSatara</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-11', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A5%80%20%E0%A4%A6%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%A3%20%E0%A4%95%E0%A4%BE%E0%A4%B6%E0%A5%80%20%E2%80%94%20%E0%A4%B5%E0%A4%BE%E0%A4%88%20%E0%A4%86%E0%A4%A3%E0%A4%BF%20%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%BE%20%E0%A4%98%E0%A4%BE%E0%A4%9F!%20%F0%9F%9B%95%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/11_day1_wai_krishna_ghats.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/11_day1_wai_krishna_ghats.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -594,6 +615,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day2_wa', this)" id="chk-day2_wa" /> WhatsApp</label>
           </div>
 
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-12')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-12', 'posts/12_day2_monsoon_waterfalls_trip.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-12')">📘 Facebook</button>
+          </div>
+
           <div class="card-tabs">
             <button class="tab-btn active" onclick="switchTab(this, 'c12-cap')">📝 Caption</button>
             <button class="tab-btn" onclick="switchTab(this, 'c12-prompt')">🎨 AI Prompt</button>
@@ -621,8 +648,7 @@
 #Thoseghar #ThosegharWaterfalls #Chalkewadi #SataraMonsoon #AatachSatara #SataraTreks #MaharashtraWaterfalls #Sahyadri_Clickers #SataraTourism #WeekendVibes</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-12', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A4%BE%20%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%B8%E0%A5%82%E0%A4%A8%20%E0%A4%B8%E0%A5%8D%E0%A4%AA%E0%A5%87%E0%A4%B6%E0%A4%B2%20%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A5%87%E0%A4%82%E0%A4%A1%20%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A5%88%E0%A4%A8%3A%20%E0%A4%A0%E0%A5%8B%E0%A4%B8%E0%A5%87%E0%A4%98%E0%A4%B0%20%E0%A4%B5%20%E0%A4%9a%E0%A4%BE%E0%A4%B3%E0%A4%95%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A1%E0%A5%80!%20%F0%9F%8C%A7%EF%B8%8F%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/12_day2_monsoon_waterfalls_trip.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/12_day2_monsoon_waterfalls_trip.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -669,6 +695,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day3_wa', this)" id="chk-day3_wa" /> WhatsApp</label>
           </div>
 
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-13')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-13', 'posts/13_day3_mahabaleshwar_strawberries.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-13')">📘 Facebook</button>
+          </div>
+
           <div class="card-tabs">
             <button class="tab-btn active" onclick="switchTab(this, 'c13-cap')">📝 Caption</button>
             <button class="tab-btn" onclick="switchTab(this, 'c13-prompt')">🎨 AI Prompt</button>
@@ -693,8 +725,7 @@
 #Mahabaleshwar #Panchgani #StrawberryWithCream #SataraFood #VennaLake #AatachSatara #SataraBusiness #MaharashtraFood #VocalForLocalSatara #ExploreSatara</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-13', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%A4%E0%A4%BE%E0%A4%9C%E0%A5%80%20%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%89%E0%A4%AC%E0%A5%87%E0%A4%B0%E0%A5%80%20%E0%A4%86%E0%A4%A3%E0%A4%BF%20%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A5%80%20%E0%A4%85%E0%A4%B8%E0%A5%8D%E0%A4%B8%E0%A4%B2%20%E0%A4%9a%E0%A4%B5!%20%F0%9F%8D%93%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/13_day3_mahabaleshwar_strawberries.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/13_day3_mahabaleshwar_strawberries.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -741,6 +772,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day4_wa', this)" id="chk-day4_wa" /> WhatsApp</label>
           </div>
 
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-14')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-14', 'posts/14_day4_sajjangad_spiritual_trek.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-14')">📘 Facebook</button>
+          </div>
+
           <div class="card-tabs">
             <button class="tab-btn active" onclick="switchTab(this, 'c14-cap')">📝 Caption</button>
             <button class="tab-btn" onclick="switchTab(this, 'c14-prompt')">🎨 AI Prompt</button>
@@ -766,8 +803,7 @@
 #Sajjangad #Ajinkyatara #SataraForts #SpiritualSatara #AatachSatara #MondayMotivation #MaharashtraForts #IncredibleSatara #SataraDiaries #Sahyadri</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-14', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%B8%E0%A4%9C%E0%A5%8D%E0%A4%9C%E0%A4%A8%E0%A4%97%E0%A4%A1%20%E0%A4%B5%20%E0%A4%85%E0%A4%9C%E0%A4%BF%E0%A4%82%E0%A4%95%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%95%20%E0%A4%97%E0%A4%BE%E0%A4%88%E0%A4%A1%20%F0%9F%9A%A9%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/14_day4_sajjangad_spiritual_trek.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/14_day4_sajjangad_spiritual_trek.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -814,6 +850,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('day5_wa', this)" id="chk-day5_wa" /> WhatsApp</label>
           </div>
 
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-15')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-15', 'posts/15_day5_karad_pritisangam_culture.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-15')">📘 Facebook</button>
+          </div>
+
           <div class="card-tabs">
             <button class="tab-btn active" onclick="switchTab(this, 'c15-cap')">📝 Caption</button>
             <button class="tab-btn" onclick="switchTab(this, 'c15-prompt')">🎨 AI Prompt</button>
@@ -842,8 +884,7 @@
 #Karad #Pritisangam #KoynaRiver #KrishnaRiver #AatachSatara #KaradCity #SataraDistrict #MaharashtraTourism #ExploreSatara #SataraUpdates</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-15', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%A1%E0%A4%9A%E0%A5%87%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%A4%E0%A5%80%E0%A4%B8%E0%A4%82%E0%A4%97%E0%A4%AE%20%E0%A4%B5%20%E0%A4%B8%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A4%BF%E0%A4%95%20%E0%A4%AE%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%80%20%F0%9F%8C%8A%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/15_day5_karad_pritisangam_culture.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/15_day5_karad_pritisangam_culture.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -902,7 +943,7 @@
 हा मेसेज तुमच्या सर्व सातारकर मित्रांना व ग्रुप्सना नक्की फॉरवर्ड करा! 🚩</div>
           <div class="card-actions">
             <button class="btn-copy" onclick="copyText('wa-broadcast-1', 'Broadcast copied!')">📋 Copy Message</button>
-            <a href="https://api.whatsapp.com/send?text=%F0%9F%94%A5%20*%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A4%BE%E0%A4%A0%E0%A5%80%20%E0%A4%AE%E0%A5%8B%E0%A4%A0%E0%A5%80%20%E0%A4%AC%E0%A4%BE%E0%A4%A4%E0%A4%AE%E0%A5%80!*%20%F0%9F%9A%80%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 Blast WhatsApp</a>
+            <button class="btn-share btn-share-wa" onclick="directShareWA('wa-broadcast-1')">📲 Blast WhatsApp</button>
           </div>
         </div>
       </div>
@@ -924,7 +965,7 @@
 (किंवा आम्हाला थेट मेसेज करा)</div>
           <div class="card-actions">
             <button class="btn-copy" onclick="copyText('wa-broadcast-2', 'Broadcast copied!')">📋 Copy Message</button>
-            <a href="https://api.whatsapp.com/send?text=%F0%9F%8F%AA%20*%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%80%E0%A4%B2%20%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A4%BE%E0%A4%A0%E0%A5%80%20%E0%A4%B8%E0%A5%81%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%B8%E0%A4%82%E0%A4%A7%E0%A5%80!*%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 Blast WhatsApp</a>
+            <button class="btn-share btn-share-wa" onclick="directShareWA('wa-broadcast-2')">📲 Blast WhatsApp</button>
           </div>
         </div>
       </div>
@@ -953,7 +994,7 @@
 - टीम आताच सातारा</div>
           <div class="card-actions">
             <button class="btn-copy" onclick="copyText('dm-script-1', 'DM Script copied!')">📋 Copy DM Script</button>
-            <a href="https://www.instagram.com/direct/inbox/" target="_blank" class="btn-ig btn">📸 Open Instagram DMs</a>
+            <a href="https://www.instagram.com/direct/inbox/" target="_blank" class="btn-share-ig btn-share">📸 Open IG Inbox</a>
           </div>
         </div>
       </div>
@@ -975,6 +1016,7 @@
 - टीम आताच सातारा</div>
           <div class="card-actions">
             <button class="btn-copy" onclick="copyText('dm-script-2', 'DM Script copied!')">📋 Copy DM Script</button>
+            <button class="btn-share btn-share-wa" onclick="directShareWA('dm-script-2')">📲 Send on WhatsApp</button>
           </div>
         </div>
       </div>
@@ -998,6 +1040,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('p7_ig', this)" id="chk-p7_ig" /> IG</label>
             <label class="chk-label"><input type="checkbox" onchange="togglePost('p7_fb', this)" id="chk-p7_fb" /> FB</label>
             <label class="chk-label"><input type="checkbox" onchange="togglePost('p7_wa', this)" id="chk-p7_wa" /> WhatsApp</label>
+          </div>
+
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-7')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-7', 'posts/07_prelaunch_teaser_4sept.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-7')">📘 Facebook</button>
           </div>
 
           <div class="card-tabs">
@@ -1029,8 +1077,7 @@
 #AatachSatara #Satara #SataraCity #SataraDistrict #4Sept2026 #SataraLaunch #SataraTourism #SataraNews #SataraKar #MaharashtraTourism #SataraDiaries #ExploreSatara</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-7', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A4%20%E0%A4%95%E0%A4%BE%E0%A4%B9%E0%A5%80%E0%A4%A4%E0%A4%B0%E0%A5%80%20%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%82%E0%A4%A4%E0%A5%80%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%98%E0%A4%A1%E0%A4%A4%E0%A5%8D%E0%A4%AF!%204%20SEPTEMBER%202026...%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/07_prelaunch_teaser_4sept.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/07_prelaunch_teaser_4sept.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -1066,6 +1113,12 @@
             <label class="chk-label"><input type="checkbox" onchange="togglePost('p9_wa', this)" id="chk-p9_wa" /> WhatsApp</label>
           </div>
 
+          <div class="social-share-row">
+            <button class="btn-share btn-share-wa" onclick="directShareWA('caption-9')">📲 WhatsApp</button>
+            <button class="btn-share btn-share-ig" onclick="directShareIG('caption-9', 'posts/09_launch_offers_and_perks.jpg')">📸 Instagram</button>
+            <button class="btn-share btn-share-fb" onclick="directShareFB('caption-9')">📘 Facebook</button>
+          </div>
+
           <div class="card-tabs">
             <button class="tab-btn active" onclick="switchTab(this, 'c9-cap')">📝 Caption</button>
             <button class="tab-btn" onclick="switchTab(this, 'c9-prompt')">🎨 AI Prompt</button>
@@ -1091,8 +1144,7 @@
 #SataraBusiness #AatachSatara #SataraDeals #SataraShops #SataraFoodie #SataraCity #VocalForLocalSatara #SataraTourism #SataraOffers #SupportLocalSatara</div>
             <div class="card-actions">
               <button class="btn-copy" onclick="copyText('caption-9', 'Caption copied!')">📋 Copy Caption</button>
-              <a href="https://api.whatsapp.com/send?text=%E0%A4%B8%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B8%E0%A4%BE%E0%A4%A0%E0%A5%80%20%E0%A5%AA%20%E0%A4%A7%E0%A4%AE%E0%A4%BE%E0%A4%95%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B0%20%E0%A4%91%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%B8!%20%F0%9F%8E%89%20https%3A%2F%2Faatachsatara-84bc9.web.app%2F" target="_blank" class="btn-share-wa">📲 WhatsApp</a>
-              <a href="posts/09_launch_offers_and_perks.jpg" target="_blank" download class="btn-dark btn">💾</a>
+              <a href="posts/09_launch_offers_and_perks.jpg" target="_blank" download class="btn-dark btn">💾 Download</a>
             </div>
           </div>
 
@@ -1163,6 +1215,45 @@
     function togglePost(key, chk) {
       localStorage.setItem('aatach_chk-' + key, chk.checked ? 'true' : 'false');
       updateProgress();
+    }
+
+    // DIRECT SHARE FUNCTIONS
+    function directShareWA(captionId) {
+      const text = document.getElementById(captionId).innerText;
+      const url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(text);
+      window.open(url, '_blank');
+    }
+
+    function directShareFB(captionId) {
+      const appUrl = "https://aatachsatara-84bc9.web.app/";
+      const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(appUrl);
+      copyText(captionId, 'Caption copied! Now paste into Facebook.');
+      window.open(fbUrl, '_blank');
+    }
+
+    async function directShareIG(captionId, imgUrl) {
+      const caption = document.getElementById(captionId).innerText;
+      
+      // Check if native Web Share API with files is supported (iOS Safari, Android Chrome)
+      if (navigator.share) {
+        try {
+          copyText(captionId, 'Caption copied! Opening share menu...');
+          await navigator.share({
+            title: 'Aatach Satara',
+            text: caption,
+            url: 'https://aatachsatara-84bc9.web.app/'
+          });
+          return;
+        } catch (err) {
+          console.log('Share canceled or fallback to IG app', err);
+        }
+      }
+      
+      // Fallback: Copy caption and launch Instagram
+      copyText(captionId, 'Caption copied! Opening Instagram...');
+      setTimeout(() => {
+        window.open('https://www.instagram.com/', '_blank');
+      }, 500);
     }
 
     // Auto unlock if remembered
