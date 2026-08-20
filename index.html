@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Aatach Satara · 20-Day Launch Campaign Hub</title>
+  <title>Aatach Satara · Creator & AI Prompt Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
   <style>
     :root {
       --bg-dark: #0a101d;
-      --card-bg: rgba(22, 32, 54, 0.85);
+      --card-bg: rgba(22, 32, 54, 0.88);
       --card-border: rgba(255, 215, 0, 0.2);
       --primary: #FFD700;
       --secondary: #ff4757;
@@ -176,7 +176,7 @@
     }
     .btn-dark:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
-    /* ── GRID & CARDS ── */
+    /* ── CONTAINER & GRID ── */
     .container {
       max-width: 1240px;
       margin: 2.5rem auto 0;
@@ -186,14 +186,14 @@
       font-size: 1.5rem;
       font-weight: 800;
       color: var(--primary);
-      margin: 2rem 0 1rem;
+      margin: 2.5rem 0 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
     }
     .post-card {
@@ -239,44 +239,96 @@
       letter-spacing: 0.05em;
     }
     .post-body {
-      padding: 1.5rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
     .post-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: #fff;
       margin-bottom: 0.75rem;
     }
+
+    /* ── CARD TABS ── */
+    .card-tabs {
+      display: flex;
+      background: rgba(0,0,0,0.4);
+      border-radius: 0.65rem;
+      padding: 0.25rem;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #a4b0be;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.45rem 0.2rem;
+      border-radius: 0.45rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .tab-btn.active {
+      background: rgba(255,215,0,0.15);
+      color: #FFD700;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
     .caption-box {
       background: rgba(0,0,0,0.45);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 0.75rem;
-      padding: 1rem;
-      font-size: 0.85rem;
+      padding: 0.9rem;
+      font-size: 0.83rem;
       line-height: 1.5;
       color: #ced6e0;
-      max-height: 180px;
+      height: 170px;
       overflow-y: auto;
       white-space: pre-wrap;
       font-family: inherit;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .caption-box::-webkit-scrollbar { width: 5px; }
     .caption-box::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.3); border-radius: 4px; }
+    
+    .prompt-box {
+      background: rgba(10, 20, 38, 0.6);
+      border: 1px solid rgba(46, 213, 115, 0.25);
+      color: #7bed9f;
+      font-family: monospace;
+      font-size: 0.78rem;
+    }
+    .schedule-box {
+      background: rgba(40, 20, 30, 0.6);
+      border: 1px solid rgba(255, 71, 87, 0.25);
+      color: #ff6b81;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
     .card-actions {
       margin-top: auto;
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
     .btn-copy {
       flex: 1;
       background: var(--primary);
       color: #111;
       font-weight: 700;
-      padding: 0.65rem;
+      padding: 0.6rem;
       border-radius: 0.5rem;
       border: none;
       cursor: pointer;
@@ -284,20 +336,58 @@
       justify-content: center;
       align-items: center;
       gap: 0.4rem;
+      font-size: 0.85rem;
       transition: background 0.2s;
     }
     .btn-copy:hover { background: #ffe033; }
+    .btn-copy-prompt {
+      background: #2ed573;
+      color: #000;
+    }
+    .btn-copy-prompt:hover { background: #55e68d; }
     .btn-view {
       background: rgba(255,255,255,0.1);
       color: #fff;
-      padding: 0.65rem 1rem;
+      padding: 0.6rem 0.9rem;
       border-radius: 0.5rem;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       border: 1px solid rgba(255,255,255,0.2);
     }
     .btn-view:hover { background: rgba(255,255,255,0.2); }
+
+    /* Marathi Tool Guide Section */
+    .tools-card {
+      background: rgba(22, 32, 54, 0.9);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      margin-top: 3rem;
+      backdrop-filter: blur(12px);
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .tool-item {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.85rem;
+      padding: 1.25rem;
+    }
+    .tool-item h3 {
+      font-size: 1.05rem;
+      color: #FFD700;
+      margin-bottom: 0.4rem;
+    }
+    .tool-item p {
+      font-size: 0.85rem;
+      color: #ced6e0;
+      line-height: 1.45;
+    }
 
     .toast {
       position: fixed;
@@ -322,9 +412,9 @@
   <!-- PIN LOCK (Default PIN: 1234) -->
   <div id="lock-screen">
     <div class="lock-card">
-      <img src="assets/logo_marathi_white.png" onerror="this.src='assets/logo_marathi_cream.png'" class="lock-logo" alt="Logo" />
+      <img src="assets/logo_marathi_transparent.png" class="lock-logo" alt="Logo" />
       <h2 style="font-size: 1.5rem; color:#FFD700; margin-bottom: 0.3rem;">आताच सातारा</h2>
-      <p style="font-size: 0.9rem; color: #a4b0be;">Private 20-Day Launch Campaign Hub</p>
+      <p style="font-size: 0.9rem; color: #a4b0be;">Private Content & AI Prompt Hub</p>
       
       <input type="password" id="pinInput" class="pin-input" placeholder="Enter PIN (1234)" maxlength="6" autofocus onkeydown="if(event.key==='Enter') verifyPin()" />
       <div id="pinError" class="pin-error">❌ Incorrect PIN! Try again.</div>
@@ -336,12 +426,12 @@
 
   <header class="header">
     <div class="logo-container">
-      <img src="assets/logo_marathi_white.png" onerror="this.src='assets/logo_marathi_cream.png'" class="logo-badge" alt="आत्ताच सातारा Logo" />
-      <img src="assets/logo_english_white.png" onerror="this.src='assets/logo_english_cream.png'" class="logo-badge" alt="Aatach Satara Logo" />
+      <img src="assets/logo_marathi_transparent.png" class="logo-badge" alt="आत्ताच सातारा Logo" />
+      <img src="assets/logo_english_transparent.png" class="logo-badge" alt="Aatach Satara Logo" />
     </div>
     <div class="launch-badge">🔥 OFFICIAL LAUNCH: FRIDAY, 4 SEPTEMBER 2026 (KRISHNA JANMASHTAMI)</div>
-    <h1>Aatach Satara · 20-Day Launch Campaign Hub</h1>
-    <p class="tagline">Covering All 11 Talukas of Satara District · Events, Business Directory, 1-Day Planner & Heritage</p>
+    <h1>Aatach Satara · Creator & AI Prompt Hub</h1>
+    <p class="tagline">All 11 Talukas of Satara District • 1-Click Copy Captions, AI Image Prompts & Auto-Schedule Guide</p>
     <div class="links-bar">
       <a href="https://aatachsatara-84bc9.web.app/" target="_blank" class="btn btn-gold">🌐 Live Web App</a>
       <a href="https://www.instagram.com/aatachsatara" target="_blank" class="btn btn-dark">📸 Instagram</a>
@@ -352,18 +442,26 @@
 
   <main class="container">
 
-    <h2 class="section-title">🔥 20-Day Pre-Launch Viral Campaign Posters</h2>
+    <h2 class="section-title">🔥 20-Day Pre-Launch Viral Campaign</h2>
     <div class="grid">
 
       <!-- Post 7: 4 Sept Teaser -->
       <div class="post-card">
         <div class="post-img-wrap aspect-square">
-          <span class="badge-pill">📢 4 Sept 2026 Teaser</span>
+          <span class="badge-pill">📢 4 Sept Teaser</span>
           <img src="posts/07_prelaunch_teaser_4sept.jpg" alt="4 Sept Launch Teaser" />
         </div>
         <div class="post-body">
-          <h2 class="post-title">Something Big Coming to Satara (4 Sept Teaser)</h2>
-          <div class="caption-box" id="caption-7">साताऱ्यात काहीतरी क्रांतीकारी घडतंय! 4 SEPTEMBER 2026... Mark the Date! 📅🔥✨
+          <h2 class="post-title">Something Big Coming to Satara (4 Sept)</h2>
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c7-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c7-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c7-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c7-cap" class="tab-content active">
+            <div class="caption-box" id="caption-7">साताऱ्यात काहीतरी क्रांतीकारी घडतंय! 4 SEPTEMBER 2026... Mark the Date! 📅🔥✨
 
 सातारा, कराड, वाई, महाबळेश्वर ते फलटण आणि पाटण... संपूर्ण सातारा जिल्ह्यासाठी एक मोठा डिजिटल बदल घेऊन येतोय!
 
@@ -383,10 +481,26 @@
 
 ---
 #AatachSatara #Satara #SataraCity #SataraDistrict #4Sept2026 #SataraLaunch #SataraTourism #SataraNews #SataraKar #MaharashtraTourism #SataraDiaries #ExploreSatara</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-7')">📋 Copy Caption</button>
-            <a href="posts/07_prelaunch_teaser_4sept.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-7', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/07_prelaunch_teaser_4sept.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c7-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-7">A breathtaking, cinematic panoramic view of Ajinkyatara Fort and Satara city under a vibrant golden sunrise sky. Rolling green Western Ghats hills, mist flowing in valleys, warm morning light glowing across ancient stone ramparts, celebratory gold dust and light rays in the air. Ultra-clean photographic composition, rich contrast, completely blank of any text or letters, pristine wallpaper aesthetic.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-7', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c7-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 20 August 2026 (Day 20)
+⏰ Best Time: 07:00 PM – 08:30 PM IST
+📱 Platform: Instagram Feed, Facebook Post & Story
+💡 Goal: Build mystery and urge users to comment "SATARA" for VIP early access.</div>
+          </div>
+
         </div>
       </div>
 
@@ -398,7 +512,15 @@
         </div>
         <div class="post-body">
           <h2 class="post-title">4 Mega Launch Offers & Early Perks</h2>
-          <div class="caption-box" id="caption-9">साताऱ्यासाठी 4 धमाकेदार ऑफर्स! 🎉 EXCLUSIVE LAUNCH PERKS! 🚀✨
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c9-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c9-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c9-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c9-cap" class="tab-content active">
+            <div class="caption-box" id="caption-9">साताऱ्यासाठी 4 धमाकेदार ऑफर्स! 🎉 EXCLUSIVE LAUNCH PERKS! 🚀✨
 
 4 सप्टेंबर 2026 रोजी होणाऱ्या "आताच सातारा" (Aatach Satara) च्या भव्य लाँच निमित्त आम्ही घेऊन आलोय खास ऑफर्स:
 
@@ -414,10 +536,26 @@
 
 ---
 #SataraBusiness #AatachSatara #SataraDeals #SataraShops #SataraFoodie #SataraCity #VocalForLocalSatara #SataraTourism #SataraOffers #SupportLocalSatara</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-9')">📋 Copy Caption</button>
-            <a href="posts/09_launch_offers_and_perks.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-9', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/09_launch_offers_and_perks.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c9-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-9">A vibrant promotional marketing announcement poster with gold glowing badges for Aatach Satara App. Bold badges with gift boxes, celebratory ribbon ribbons, deep royal navy blue and gold particles background, ultra crisp typography.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-9', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c9-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 23 August 2026 (Day 18)
+⏰ Best Time: 10:30 AM – 12:30 PM IST
+📱 Platform: Instagram, Facebook & WhatsApp Status
+💡 Goal: Onboard the first 50 local Satara businesses & sweet shops.</div>
+          </div>
+
         </div>
       </div>
 
@@ -429,7 +567,15 @@
         </div>
         <div class="post-body">
           <h2 class="post-title">All 11 Talukas of Satara in 1 Super App</h2>
-          <div class="caption-box" id="caption-8">11 तालुके, 1 ओळख — आपला सातारा जिल्हा! 🗺️❤️🚩
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c8-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c8-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c8-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c8-cap" class="tab-content active">
+            <div class="caption-box" id="caption-8">11 तालुके, 1 ओळख — आपला सातारा जिल्हा! 🗺️❤️🚩
 
 सातारा म्हणजे फक्त शहर नाही, तर सह्याद्रीच्या कुशीत वसलेला 11 तालुक्यांचा ऐतिहासिक वारसा आहे! 
 
@@ -450,10 +596,26 @@
 
 ---
 #SataraDistrict #11Talukas #SataraKaradWai #Mahabaleshwar #Phaltan #Patan #Koyna #AatachSatara #MaharashtraTourism #IncredibleSatara #Sahyadri</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-8')">📋 Copy Caption</button>
-            <a href="posts/08_all_11_talukas_map.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-8', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/08_all_11_talukas_map.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c8-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-8">A stylish graphic map and landmark showcase highlighting all 11 Talukas of Satara district, Maharashtra: Satara, Karad, Wai, Mahabaleshwar, Phaltan, Patan, Jaoli, Koregaon, Khatav, Man, Khandala. Sleek 3D terrain topography of Satara district with glowing golden location pins for each taluka, surrounded by iconic icons of waterfalls, strawberry baskets, Dhol Tasha, and forts.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-8', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c8-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 26 August 2026 (Day 16)
+⏰ Best Time: 06:00 PM – 08:00 PM IST
+📱 Platform: Instagram, Facebook & Community Groups
+💡 Goal: Viral engagement by asking Satarkars to comment their taluka.</div>
+          </div>
+
         </div>
       </div>
 
@@ -464,8 +626,16 @@
           <img src="posts/10_janmashtami_dahihandi_launch.jpg" alt="Janmashtami and Dahi Handi Launch" />
         </div>
         <div class="post-body">
-          <h2 class="post-title">Krishna Janmashtami & Dahi Handi Launch</h2>
-          <div class="caption-box" id="caption-10">गोविंदा रे गोपाळा! श्रीकृष्ण जन्माष्टमीच्या शुभमुहूर्तावर साताऱ्याचा महा-लाँच! 🪔🏺🔥
+          <h2 class="post-title">Krishna Janmashtami & Dahi Handi Special</h2>
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c10-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c10-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c10-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c10-cap" class="tab-content active">
+            <div class="caption-box" id="caption-10">गोविंदा रे गोपाळा! श्रीकृष्ण जन्माष्टमीच्या शुभमुहूर्तावर साताऱ्याचा महा-लाँच! 🪔🏺🔥
 
 शुक्रवार, 4 सप्टेंबर 2026... दहीहंडीचा जल्लोष आणि साताऱ्याच्या हक्काच्या डिजिटल ॲपची धमाकेदार सुरुवात! 
 
@@ -481,16 +651,32 @@
 
 ---
 #DahiHandi2026 #KrishnaJanmashtami #Gokulashtami #SataraDahiHandi #AatachSatara #SataraFestivals #SataraCulture #DholTashaSatara #SataraLive</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-10')">📋 Copy Caption</button>
-            <a href="posts/10_janmashtami_dahihandi_launch.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-10', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/10_janmashtami_dahihandi_launch.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c10-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-10">A vibrant, festive celebration of Dahi Handi and Krishna Janmashtami in Maharashtra. An energetic human pyramid of Govindas reaching up towards an earthen pot decorated with fresh yellow marigold flowers and coconut, splashes of white curd in the air, warm evening festival lights, cheering crowd with saffron flags, cinematic lighting, no text on image.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-10', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c10-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 03 September 2026 (Launch Eve)
+⏰ Best Time: 07:30 PM – 09:30 PM IST
+📱 Platform: Instagram, Facebook & Stories
+💡 Goal: Hype up the big Friday launch on Krishna Janmashtami day.</div>
+          </div>
+
         </div>
       </div>
 
     </div>
 
-    <h2 class="section-title">🚀 Core Features & Launch Day Posts</h2>
+    <h2 class="section-title">🚀 Core Features & Official Launch Posts</h2>
     <div class="grid">
 
       <!-- Post 1: Grand Launch -->
@@ -501,7 +687,15 @@
         </div>
         <div class="post-body">
           <h2 class="post-title">Grand Launch Announcement (4 Sept Day 0)</h2>
-          <div class="caption-box" id="caption-1">🎉 सातारा... आता सर्वकाही एकाच ठिकाणी! THE WAIT IS OVER! 🚀✨
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c1-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c1-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c1-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c1-cap" class="tab-content active">
+            <div class="caption-box" id="caption-1">🎉 सातारा... आता सर्वकाही एकाच ठिकाणी! THE WAIT IS OVER! 🚀✨
 
 We are thrilled to announce the official launch of Aatach Satara (आताच सातारा) — your ultimate all-in-one digital guide to Satara district!
 
@@ -521,53 +715,46 @@ No more asking in 10 different WhatsApp groups or searching scattered websites. 
 
 ---
 #AatachSatara #Satara #SataraCity #SataraDistrict #SataraApp #SataraTourism #SataraEvents #MaharashtraTourism #KaasPlateau #Ajinkyatara #SataraFood #ExploreSatara #SataraKar</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-1')">📋 Copy Caption</button>
-            <a href="posts/01_grand_launch_feed.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-1', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/01_grand_launch_feed.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Post 2: 4 Superpowers -->
-      <div class="post-card">
-        <div class="post-img-wrap aspect-square">
-          <span class="badge-pill">⚡ 4 Superpowers</span>
-          <img src="posts/02_app_features_showcase.jpg" alt="Features Showcase" />
-        </div>
-        <div class="post-body">
-          <h2 class="post-title">4 Superpowers of Aatach Satara</h2>
-          <div class="caption-box" id="caption-2">🌟 साताऱ्यात काय चालू आहे? आता शोधा फक्त एका क्लिकवर! 📱💡
-
-Whether you are a proud Satarkar or a tourist planning your next monsoon getaway, here is how Aatach Satara makes your life 10x easier:
-
-1️⃣ Today's Events (आजचे कार्यक्रम): Never miss an art exhibition, musical night, or guided trek in the district.
-2️⃣ Satara Business Directory (स्थानिक व्यवसाय): Find verified local restaurants, hotels, authentic sweets, and artisan shops.
-3️⃣ Smart Trip Planner (प्रवास नियोजन): Instant curated itineraries for 1-day or weekend trips around Kaas, Thoseghar, and Mahabaleshwar.
-4️⃣ Festival & Live Alerts (सण आणि पर्यटन): Know the exact season timings, entry passes, and weather alerts before stepping out!
-
-🏪 For Business Owners & Event Organizers:
-List your shop or upcoming event with us for free and reach thousands of daily local users!
-
-👉 Explore the web app today: https://aatachsatara-84bc9.web.app/ (Link in Bio)
-
----
-#SataraGuide #AatachSatara #SataraDiaries #MaharashtraTravel #SataraBusiness #SataraTrekkers #SataraPhotographers #SataraGram #Thoseghar #Sajjangad</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-2')">📋 Copy Caption</button>
-            <a href="posts/02_app_features_showcase.jpg" target="_blank" download class="btn-view">💾 Download</a>
+          <div id="c1-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-1">A stunning, vibrant, ultra-high-quality social media announcement banner for the launch of 'Aatach Satara' - the ultimate mobile app for Satara district, Maharashtra. In the background, iconic Satara landmarks: majestic Ajinkyatara fort, lush green Sahyadri hills with waterfalls and purple flower carpets of Kaas Plateau under golden sunset sky. In foreground, modern smartphone displaying app dashboard.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-1', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
           </div>
+
+          <div id="c1-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 04 September 2026 (Launch Day!)
+⏰ Best Time: 08:00 AM – 10:00 AM IST
+📱 Platform: Instagram, Facebook, LinkedIn, WhatsApp Broadcasts
+💡 Goal: Official release day blitz with live web link.</div>
+          </div>
+
         </div>
       </div>
 
       <!-- Post 4: Live Events -->
       <div class="post-card">
         <div class="post-img-wrap aspect-square">
-          <span class="badge-pill">📅 Live Events Spotlight</span>
-          <img src="posts/04_todays_events_spotlight.jpg" alt="Live Events Spotlight" />
+          <span class="badge-pill">📅 Events Spotlight</span>
+          <img src="posts/04_todays_events_spotlight.jpg" alt="Events Spotlight" />
         </div>
         <div class="post-body">
           <h2 class="post-title">Today's & Upcoming Events in Satara</h2>
-          <div class="caption-box" id="caption-4">साताऱ्यातील आजचे आणि आगामी सर्व कार्यक्रम आता एकाच क्लिकवर! 🎪🎭🔥
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c4-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c4-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c4-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c4-cap" class="tab-content active">
+            <div class="caption-box" id="caption-4">साताऱ्यातील आजचे आणि आगामी सर्व कार्यक्रम आता एकाच क्लिकवर! 🎪🎭🔥
 
 Looking for weekend plans in Satara? Whether it's Dhol Tasha practice, live musical evenings, sports tournaments, or cultural exhibitions — get real-time updates and ticket links in one place!
 
@@ -582,22 +769,46 @@ Looking for weekend plans in Satara? Whether it's Dhol Tasha practice, live musi
 
 ---
 #SataraEvents #AatachSatara #SataraLive #SataraCulture #DholTasha #SataraNews #SataraToday #MaharashtraEvents #SataraDistrict</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-4')">📋 Copy Caption</button>
-            <a href="posts/04_todays_events_spotlight.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-4', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/04_todays_events_spotlight.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c4-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-4">A high-energy cultural and live events promotional background for Satara district. Featuring traditional Maharashtrian Dhol Tasha celebration, vibrant festive lights, live stage performance silhouette, and historic Satara fort under evening sky with golden fireworks. Rich deep blue and festive saffron colors.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-4', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c4-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 29 August 2026
+⏰ Best Time: 11:00 AM – 01:00 PM IST
+📱 Platform: Instagram & Facebook
+💡 Goal: Promote free September event listing for Ganesh mandals and organizers.</div>
+          </div>
+
         </div>
       </div>
 
       <!-- Post 5: Food & Business -->
       <div class="post-card">
         <div class="post-img-wrap aspect-square">
-          <span class="badge-pill">🏪 Satara Food & Business</span>
+          <span class="badge-pill">🏪 Food & Business</span>
           <img src="posts/05_satara_business_directory.jpg" alt="Satara Food and Business" />
         </div>
         <div class="post-body">
           <h2 class="post-title">Satara Food & Business Directory</h2>
-          <div class="caption-box" id="caption-5">सातारचा कंदी पेढा, झणझणीत मिसळ आणि अस्सल सातारची चव! 🤤🍛✨
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c5-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c5-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c5-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c5-cap" class="tab-content active">
+            <div class="caption-box" id="caption-5">सातारचा कंदी पेढा, झणझणीत मिसळ आणि अस्सल सातारची चव! 🤤🍛✨
 
 Satara is a paradise for food lovers! From world-famous Satari Kandi Pedha to authentic Gavran Misal, Mahabaleshwar organic strawberries, and traditional thalis — discover the best food joints on Aatach Satara!
 
@@ -609,10 +820,26 @@ Get your business listed on Aatach Satara and reach thousands of local customers
 
 ---
 #SataraFood #SataraKandiPedha #SataraMisal #AatachSatara #SataraBusiness #SataraRestaurants #MahabaleshwarStrawberry #VocalForLocalSatara #SataraFoodie</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-5')">📋 Copy Caption</button>
-            <a href="posts/05_satara_business_directory.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-5', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/05_satara_business_directory.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
+
+          <div id="c5-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-5">A mouth-watering, premium food collage for Satara, Maharashtra. Authentic Satari Kandi Pedha in traditional brass plate, spicy steaming Maharashtrian Misal Pav with farsan and lemon, traditional thali dishes, and fresh organic red strawberries from Mahabaleshwar. Warm golden restaurant lighting, rustic wooden table.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-5', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
+          </div>
+
+          <div id="c5-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 31 August 2026
+⏰ Best Time: 12:30 PM – 02:00 PM IST (Lunch hour)
+📱 Platform: Instagram & Facebook
+💡 Goal: Engage foodies and invite restaurants for free premium listings.</div>
+          </div>
+
         </div>
       </div>
 
@@ -624,7 +851,15 @@ Get your business listed on Aatach Satara and reach thousands of local customers
         </div>
         <div class="post-body">
           <h2 class="post-title">Kaas Plateau Flower Season & Heritage</h2>
-          <div class="caption-box" id="caption-6">जागतिक वारसा स्थळ: कास पठाराचे विलोभनीय सौंदर्य! 🌸✨
+          
+          <div class="card-tabs">
+            <button class="tab-btn active" onclick="switchTab(this, 'c6-cap')">📝 Caption</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c6-prompt')">🎨 AI Prompt</button>
+            <button class="tab-btn" onclick="switchTab(this, 'c6-time')">📅 Schedule</button>
+          </div>
+
+          <div id="c6-cap" class="tab-content active">
+            <div class="caption-box" id="caption-6">जागतिक वारसा स्थळ: कास पठाराचे विलोभनीय सौंदर्य! 🌸✨
 
 When nature blooms in 850+ vibrant wild flower species, Satara turns into heaven! 
 
@@ -638,38 +873,61 @@ Plan your Kaas trip with route directions, nearby homestays, and pass booking li
 
 ---
 #KaasPathar #KaasPlateau #ValleyOfFlowers #AatachSatara #SataraTourism #IncredibleSatara #MaharashtraTourism #NatureLovers #SataraPhotographers</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-6')">📋 Copy Caption</button>
-            <a href="posts/06_kaas_flowers_festivals.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            <div class="card-actions">
+              <button class="btn-copy" onclick="copyText('caption-6', 'Caption copied!')">📋 Copy Caption</button>
+              <a href="posts/06_kaas_flowers_festivals.jpg" target="_blank" download class="btn-view">💾 Download</a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Post 3: Vertical Story/Reel -->
-      <div class="post-card">
-        <div class="post-img-wrap aspect-story">
-          <span class="badge-pill">📲 Vertical Story & Reel</span>
-          <img src="posts/03_launch_story_reel.jpg" alt="Story Reel Visual" />
-        </div>
-        <div class="post-body">
-          <h2 class="post-title">Story & Reel Cover (9:16)</h2>
-          <div class="caption-box" id="caption-3">🚀 STORY LINK & STICKERS SETUP:
-
-Header: सातारा, We are LIVE! 🚀
-Link URL: https://aatachsatara-84bc9.web.app/
-Sticker Text: Explore Aatach Satara 📲
-Poll Question: Are you ready to explore Satara? [Yes! 🔥 / Checking now 👀]</div>
-          <div class="card-actions">
-            <button class="btn-copy" onclick="copyCaption('caption-3')">📋 Copy Story Text</button>
-            <a href="posts/03_launch_story_reel.jpg" target="_blank" download class="btn-view">💾 Download</a>
+          <div id="c6-prompt" class="tab-content">
+            <div class="caption-box prompt-box" id="prompt-6">A breathtaking panoramic landscape of Kaas Plateau (कास पठार), the UNESCO World Natural Heritage site in Satara, Maharashtra. Endless carpet of vibrant purple and yellow wild flowers blooming under soft morning sunlight, misty Western Ghats mountains in background, dew drops glistening on petals, crystal clear blue sky.</div>
+            <div class="card-actions">
+              <button class="btn-copy btn-copy-prompt" onclick="copyText('prompt-6', 'AI Prompt copied!')">🎨 Copy AI Prompt</button>
+            </div>
           </div>
+
+          <div id="c6-time" class="tab-content">
+            <div class="caption-box schedule-box">📅 Recommended Date: 02 September 2026
+⏰ Best Time: 09:00 AM – 11:00 AM IST
+📱 Platform: Instagram, Facebook & Stories
+💡 Goal: High saves and shares for weekend tourists and nature lovers.</div>
+          </div>
+
         </div>
       </div>
 
     </div>
+
+    <!-- Marathi Typing & Extension Guide -->
+    <div class="tools-card">
+      <h2 style="color: #FFD700; font-size: 1.35rem; display: flex; align-items: center; gap: 0.5rem;">
+        ⌨️ Best Extensions & Tools for Perfect Marathi Typing
+      </h2>
+      <p style="color: #a4b0be; font-size: 0.9rem; margin-top: 0.4rem;">
+        Use these free tools to easily type, edit, and create 100% grammatically correct Marathi text anywhere:
+      </p>
+      
+      <div class="tools-grid">
+        <div class="tool-item">
+          <h3>1. Google Input Tools (Chrome Extension)</h3>
+          <p>Type English phonetic words (e.g. <code>aatach satara</code>) and it automatically turns into pure Marathi (<code>आताच सातारा</code>). Works directly in your browser.</p>
+        </div>
+
+        <div class="tool-item">
+          <h3>2. Windows Marathi Phonetic Keyboard</h3>
+          <p>Built right into Windows 10 & 11! Go to <b>Settings ➡️ Time & Language ➡️ Language ➡️ Add Marathi (Phonetic)</b>. Press <code>Win + Space</code> to switch anytime.</p>
+        </div>
+
+        <div class="tool-item">
+          <h3>3. Canva (Google Devanagari Fonts)</h3>
+          <p>If you want to create custom banners yourself, Canva supports verified Marathi Google fonts like <b>Noto Sans Devanagari</b>, <b>Yatra One</b>, and <b>Rozha One</b>.</p>
+        </div>
+      </div>
+    </div>
+
   </main>
 
-  <div id="toast" class="toast">✅ Caption copied to clipboard!</div>
+  <div id="toast" class="toast">✅ Text copied to clipboard!</div>
 
   <script>
     const SECRET_PIN = "1234";
@@ -701,10 +959,19 @@ Poll Question: Are you ready to explore Satara? [Yes! 🔥 / Checking now 👀]<
       document.getElementById('pinInput').value = '';
     }
 
-    function copyCaption(id) {
+    function switchTab(btn, targetId) {
+      const card = btn.closest('.post-body');
+      card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      card.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      card.querySelector('#' + targetId).classList.add('active');
+    }
+
+    function copyText(id, msg) {
       const text = document.getElementById(id).innerText;
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
+        toast.innerText = '✅ ' + (msg || 'Copied to clipboard!');
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2500);
       });
